@@ -9,24 +9,24 @@
 }
 
 :root {
-    /* カラーパレット - ニュアンスカラー追加 */
+    /* カラーパレット - モダンでクールな色調 */
     --color-white: #ffffff;
-    --color-off-white: #faf8f6;
+    --color-off-white: #f8f9fa;
     --color-black: #000000;
-    --color-dark-brown: #3d3229;
-    --color-text: #2c2c2c;
-    --color-border: #e8e4df;
-    --color-sale: #c85a54;
+    --color-dark-gray: #2c3e50;
+    --color-text: #34495e;
+    --color-border: #e0e4e8;
+    --color-sale: #e74c3c;
 
-    /* ニュアンスカラー */
-    --color-beige: #e6ddd1;
-    --color-greige: #d4cdc3;
-    --color-sage: #b8bdb5;
-    --color-taupe: #9d8b7e;
-    --color-cream: #f5f1ea;
-    --color-soft-gray: #e3e1de;
-    --color-dusty-rose: #d4b5a8;
-    --color-olive: #8a8674;
+    /* クールニュアンスカラー */
+    --color-cool-gray: #eceff1;
+    --color-slate: #b0bec5;
+    --color-steel: #90a4ae;
+    --color-blue-gray: #78909c;
+    --color-pale-blue: #cfd8dc;
+    --color-ice-blue: #e1f5fe;
+    --color-mist: #b0c4de;
+    --color-charcoal: #546e7a;
 
     /* フォント */
     --font-serif: 'EB Garamond', 'Garamond', 'Baskerville', serif;
@@ -87,7 +87,7 @@ img {
    ======================================== */
 
 .announcement-bar {
-    background: linear-gradient(90deg, var(--color-taupe) 0%, var(--color-olive) 100%);
+    background: linear-gradient(90deg, var(--color-blue-gray) 0%, var(--color-charcoal) 100%);
     color: var(--color-white);
     text-align: center;
     padding: 0.75rem;
@@ -143,15 +143,29 @@ img {
     position: relative;
     height: 70vh;
     min-height: 500px;
-    background:
-        linear-gradient(135deg, rgba(61, 50, 41, 0.9) 0%, rgba(138, 134, 116, 0.8) 100%),
-        repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(255, 255, 255, 0.03) 35px, rgba(255, 255, 255, 0.03) 70px),
-        linear-gradient(to bottom, var(--color-taupe), var(--color-olive));
     display: flex;
     align-items: center;
     justify-content: center;
     color: var(--color-white);
     overflow: hidden;
+    background: linear-gradient(135deg, var(--color-steel) 0%, var(--color-blue-gray) 100%);
+}
+
+.hero-background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+    /* クールな質感を統一するフィルター */
+    filter:
+        saturate(70%)
+        brightness(90%)
+        contrast(105%)
+        hue-rotate(-15deg)
+        grayscale(10%);
 }
 
 .hero::before {
@@ -161,9 +175,13 @@ img {
     left: 0;
     right: 0;
     bottom: 0;
-    background-image:
-        radial-gradient(circle at 20% 50%, rgba(212, 181, 168, 0.1) 0%, transparent 50%),
-        radial-gradient(circle at 80% 80%, rgba(184, 189, 181, 0.1) 0%, transparent 50%);
+    background: linear-gradient(
+        135deg,
+        rgba(44, 62, 80, 0.7) 0%,
+        rgba(84, 110, 122, 0.6) 50%,
+        rgba(44, 62, 80, 0.75) 100%
+    );
+    z-index: 1;
     pointer-events: none;
 }
 
@@ -171,7 +189,7 @@ img {
     text-align: center;
     padding: 2rem;
     position: relative;
-    z-index: 1;
+    z-index: 2;
 }
 
 .hero-content h2 {
@@ -246,27 +264,27 @@ img {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(135deg, var(--color-greige) 0%, var(--color-cream) 100%);
-    color: var(--color-taupe);
+    background: linear-gradient(135deg, var(--color-slate) 0%, var(--color-pale-blue) 100%);
+    color: var(--color-charcoal);
     font-size: 1rem;
     font-family: var(--font-serif);
     letter-spacing: 0.1em;
 }
 
 .category-item:nth-child(1) .placeholder-image {
-    background: linear-gradient(135deg, var(--color-sage) 0%, var(--color-soft-gray) 100%);
+    background: linear-gradient(135deg, var(--color-steel) 0%, var(--color-cool-gray) 100%);
 }
 
 .category-item:nth-child(2) .placeholder-image {
-    background: linear-gradient(135deg, var(--color-beige) 0%, var(--color-cream) 100%);
+    background: linear-gradient(135deg, var(--color-pale-blue) 0%, var(--color-ice-blue) 100%);
 }
 
 .category-item:nth-child(3) .placeholder-image {
-    background: linear-gradient(135deg, var(--color-dusty-rose) 0%, var(--color-greige) 100%);
+    background: linear-gradient(135deg, var(--color-mist) 0%, var(--color-slate) 100%);
 }
 
 .category-item:nth-child(4) .placeholder-image {
-    background: linear-gradient(135deg, var(--color-taupe) 0%, var(--color-sage) 100%);
+    background: linear-gradient(135deg, var(--color-blue-gray) 0%, var(--color-steel) 100%);
 }
 
 /* ========================================
@@ -278,7 +296,7 @@ img {
 }
 
 .products.sale-section {
-    background: linear-gradient(180deg, var(--color-cream) 0%, var(--color-beige) 100%);
+    background: linear-gradient(180deg, var(--color-ice-blue) 0%, var(--color-pale-blue) 100%);
 }
 
 .section-header {
@@ -322,17 +340,17 @@ img {
 .product-image {
     position: relative;
     aspect-ratio: 3/4;
-    background: linear-gradient(135deg, var(--color-soft-gray) 0%, var(--color-cream) 100%);
+    background: linear-gradient(135deg, var(--color-cool-gray) 0%, var(--color-ice-blue) 100%);
     margin-bottom: 1rem;
     overflow: hidden;
 }
 
 .product-item:nth-child(odd) .product-image {
-    background: linear-gradient(135deg, var(--color-beige) 0%, var(--color-greige) 100%);
+    background: linear-gradient(135deg, var(--color-pale-blue) 0%, var(--color-slate) 100%);
 }
 
 .product-item:nth-child(even) .product-image {
-    background: linear-gradient(135deg, var(--color-sage) 0%, var(--color-soft-gray) 100%);
+    background: linear-gradient(135deg, var(--color-steel) 0%, var(--color-cool-gray) 100%);
 }
 
 .badge {
@@ -384,7 +402,7 @@ img {
 
 .btn-add-cart {
     width: 100%;
-    background: linear-gradient(135deg, var(--color-taupe) 0%, var(--color-olive) 100%);
+    background: linear-gradient(135deg, var(--color-blue-gray) 0%, var(--color-charcoal) 100%);
     color: var(--color-white);
     padding: 0.875rem;
     font-size: 0.875rem;
@@ -394,9 +412,9 @@ img {
 }
 
 .btn-add-cart:hover {
-    background: linear-gradient(135deg, var(--color-olive) 0%, var(--color-dark-brown) 100%);
+    background: linear-gradient(135deg, var(--color-charcoal) 0%, var(--color-dark-gray) 100%);
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(61, 50, 41, 0.3);
+    box-shadow: 0 4px 12px rgba(44, 62, 80, 0.4);
 }
 
 /* ========================================
@@ -404,7 +422,7 @@ img {
    ======================================== */
 
 .footer {
-    background: linear-gradient(180deg, var(--color-dark-brown) 0%, #2c2420 100%);
+    background: linear-gradient(180deg, var(--color-dark-gray) 0%, #1a252f 100%);
     color: var(--color-white);
     padding: 3rem 0 1.5rem;
     margin-top: var(--section-spacing);
@@ -573,7 +591,7 @@ img {
     right: 0;
     bottom: 0;
     background:
-        linear-gradient(135deg, rgba(230, 221, 209, 0.9) 0%, rgba(212, 205, 195, 0.8) 50%, rgba(184, 189, 181, 0.9) 100%),
+        linear-gradient(135deg, rgba(176, 190, 197, 0.9) 0%, rgba(207, 216, 220, 0.85) 50%, rgba(144, 164, 174, 0.9) 100%),
         repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(255, 255, 255, 0.05) 2px, rgba(255, 255, 255, 0.05) 4px);
     z-index: 0;
 }
@@ -590,7 +608,7 @@ img {
 .image-banner-content h2 {
     font-size: 2.5rem;
     margin-bottom: 1rem;
-    color: var(--color-dark-brown);
+    color: var(--color-dark-gray);
 }
 
 .image-banner-content p {
@@ -602,8 +620,8 @@ img {
 .btn-secondary {
     display: inline-block;
     background-color: transparent;
-    color: var(--color-dark-brown);
-    border: 2px solid var(--color-dark-brown);
+    color: var(--color-dark-gray);
+    border: 2px solid var(--color-dark-gray);
     padding: 1rem 2.5rem;
     font-size: 0.875rem;
     font-weight: 700;
@@ -613,7 +631,7 @@ img {
 }
 
 .btn-secondary:hover {
-    background-color: var(--color-dark-brown);
+    background-color: var(--color-dark-gray);
     color: var(--color-white);
 }
 
@@ -636,14 +654,14 @@ img {
 
 .split-banner-item:nth-child(1) {
     background:
-        linear-gradient(135deg, rgba(157, 139, 126, 0.85) 0%, rgba(138, 134, 116, 0.85) 100%),
-        repeating-linear-gradient(90deg, transparent, transparent 10px, rgba(0, 0, 0, 0.02) 10px, rgba(0, 0, 0, 0.02) 20px);
+        linear-gradient(135deg, rgba(120, 144, 156, 0.9) 0%, rgba(84, 110, 122, 0.9) 100%),
+        repeating-linear-gradient(90deg, transparent, transparent 10px, rgba(255, 255, 255, 0.05) 10px, rgba(255, 255, 255, 0.05) 20px);
 }
 
 .split-banner-item:nth-child(2) {
     background:
-        linear-gradient(135deg, rgba(212, 181, 168, 0.85) 0%, rgba(230, 221, 209, 0.85) 100%),
-        repeating-linear-gradient(90deg, transparent, transparent 10px, rgba(255, 255, 255, 0.03) 10px, rgba(255, 255, 255, 0.03) 20px);
+        linear-gradient(135deg, rgba(176, 190, 197, 0.9) 0%, rgba(207, 216, 220, 0.9) 100%),
+        repeating-linear-gradient(90deg, transparent, transparent 10px, rgba(255, 255, 255, 0.05) 10px, rgba(255, 255, 255, 0.05) 20px);
 }
 
 .split-banner-content {
@@ -655,7 +673,7 @@ img {
 }
 
 .split-banner-item:nth-child(2) .split-banner-content {
-    color: var(--color-dark-brown);
+    color: var(--color-dark-gray);
 }
 
 .split-banner-content h3 {
@@ -697,7 +715,7 @@ img {
 
 .section-subtitle {
     font-size: 1rem;
-    color: var(--color-taupe);
+    color: var(--color-blue-gray);
     margin-top: 0.5rem;
     font-weight: 400;
 }
@@ -720,70 +738,70 @@ img {
     position: absolute;
     top: 0;
     left: 0;
-    /* 画像の質感を統一するフィルター */
+    /* クールな質感を統一するフィルター */
     filter:
-        sepia(15%)
-        saturate(80%)
-        brightness(105%)
-        contrast(95%)
-        hue-rotate(-5deg);
+        saturate(65%)
+        brightness(95%)
+        contrast(110%)
+        hue-rotate(-20deg)
+        grayscale(15%);
     transition: transform 0.6s ease, filter 0.6s ease;
 }
 
 /* 各ロケーションの色調整 */
 #shanghai .location-image {
     filter:
-        sepia(20%)
-        saturate(75%)
-        brightness(102%)
-        contrast(98%)
-        hue-rotate(-8deg);
+        saturate(60%)
+        brightness(92%)
+        contrast(112%)
+        hue-rotate(-25deg)
+        grayscale(20%);
 }
 
 #kamikochi .location-image {
     filter:
-        sepia(12%)
-        saturate(85%)
-        brightness(108%)
-        contrast(92%)
-        hue-rotate(-3deg);
+        saturate(70%)
+        brightness(98%)
+        contrast(108%)
+        hue-rotate(-15deg)
+        grayscale(12%);
 }
 
 #bali .location-image {
     filter:
-        sepia(18%)
-        saturate(78%)
-        brightness(106%)
-        contrast(94%)
-        hue-rotate(-6deg);
+        saturate(65%)
+        brightness(95%)
+        contrast(110%)
+        hue-rotate(-18deg)
+        grayscale(15%);
 }
 
 #turkey .location-image {
     filter:
-        sepia(22%)
-        saturate(72%)
-        brightness(100%)
-        contrast(100%)
-        hue-rotate(-10deg);
+        saturate(58%)
+        brightness(90%)
+        contrast(115%)
+        hue-rotate(-28deg)
+        grayscale(22%);
 }
 
 #shoto .location-image {
     filter:
-        sepia(16%)
-        saturate(80%)
-        brightness(104%)
-        contrast(96%)
-        hue-rotate(-4deg);
+        saturate(68%)
+        brightness(96%)
+        contrast(109%)
+        hue-rotate(-20deg)
+        grayscale(18%);
 }
 
 .location-banner:hover .location-image {
     transform: scale(1.05);
     filter:
-        sepia(10%)
-        saturate(90%)
-        brightness(110%)
-        contrast(100%)
-        hue-rotate(0deg);
+        saturate(75%)
+        brightness(105%)
+        contrast(105%)
+        hue-rotate(-10deg)
+        grayscale(8%);
 }
 
 .location-overlay {
@@ -794,9 +812,9 @@ img {
     bottom: 0;
     background: linear-gradient(
         to bottom,
-        rgba(61, 50, 41, 0.3) 0%,
-        rgba(61, 50, 41, 0.5) 50%,
-        rgba(61, 50, 41, 0.7) 100%
+        rgba(44, 62, 80, 0.4) 0%,
+        rgba(44, 62, 80, 0.6) 50%,
+        rgba(44, 62, 80, 0.75) 100%
     );
     display: flex;
     align-items: center;
@@ -808,9 +826,9 @@ img {
 .location-banner:hover .location-overlay {
     background: linear-gradient(
         to bottom,
-        rgba(61, 50, 41, 0.2) 0%,
-        rgba(61, 50, 41, 0.4) 50%,
-        rgba(61, 50, 41, 0.6) 100%
+        rgba(44, 62, 80, 0.3) 0%,
+        rgba(44, 62, 80, 0.5) 50%,
+        rgba(44, 62, 80, 0.65) 100%
     );
 }
 
@@ -849,27 +867,27 @@ img {
 .location-banner img[src*="turkey.jpg"],
 .location-banner img[src*="shoto.jpg"] {
     /* 画像が読み込まれない場合のフォールバック */
-    background: var(--color-greige);
+    background: var(--color-slate);
 }
 
 #shanghai .location-image:not([src]) {
-    background: linear-gradient(135deg, var(--color-taupe) 0%, var(--color-olive) 100%);
+    background: linear-gradient(135deg, var(--color-blue-gray) 0%, var(--color-charcoal) 100%);
 }
 
 #kamikochi .location-image:not([src]) {
-    background: linear-gradient(135deg, var(--color-sage) 0%, var(--color-soft-gray) 100%);
+    background: linear-gradient(135deg, var(--color-steel) 0%, var(--color-cool-gray) 100%);
 }
 
 #bali .location-image:not([src]) {
-    background: linear-gradient(135deg, var(--color-beige) 0%, var(--color-cream) 100%);
+    background: linear-gradient(135deg, var(--color-pale-blue) 0%, var(--color-ice-blue) 100%);
 }
 
 #turkey .location-image:not([src]) {
-    background: linear-gradient(135deg, var(--color-dusty-rose) 0%, var(--color-greige) 100%);
+    background: linear-gradient(135deg, var(--color-mist) 0%, var(--color-slate) 100%);
 }
 
 #shoto .location-image:not([src]) {
-    background: linear-gradient(135deg, var(--color-olive) 0%, var(--color-dark-brown) 100%);
+    background: linear-gradient(135deg, var(--color-charcoal) 0%, var(--color-dark-gray) 100%);
 }
 
 @media (max-width: 700px) {
