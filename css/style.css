@@ -1,0 +1,497 @@
+/* ========================================
+   リセット & ベーススタイル
+   ======================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* カラーパレット - EIMY ISTOIRE & ANDREA&Co. 参考 */
+    --color-white: #ffffff;
+    --color-black: #000000;
+    --color-dark-brown: #170f0f;
+    --color-text: #1c1c1c;
+    --color-border: #d9d9d9;
+    --color-sale: #e32c2b;
+    --color-gray-light: #f5f5f5;
+
+    /* フォント */
+    --font-serif: 'EB Garamond', 'Garamond', 'Baskerville', serif;
+    --font-sans: 'Noto Sans JP', sans-serif;
+
+    /* レイアウト */
+    --container-max: 85rem; /* 1360px */
+    --gutter: 1.25rem;
+    --section-spacing: 4rem;
+
+    /* その他 */
+    --border-radius: 0;
+    --transition: all 0.3s ease;
+}
+
+body {
+    font-family: var(--font-sans);
+    color: var(--color-text);
+    line-height: 1.65;
+    letter-spacing: 0;
+    background-color: var(--color-white);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-serif);
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    line-height: 1.3;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: var(--transition);
+}
+
+button {
+    font-family: var(--font-sans);
+    cursor: pointer;
+    border: none;
+    transition: var(--transition);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.container {
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding: 0 var(--gutter);
+}
+
+/* ========================================
+   アナウンスメントバー
+   ======================================== */
+
+.announcement-bar {
+    background-color: var(--color-dark-brown);
+    color: var(--color-white);
+    text-align: center;
+    padding: 0.75rem;
+    font-size: 0.875rem;
+    letter-spacing: 0.05em;
+}
+
+/* ========================================
+   ヘッダー
+   ======================================== */
+
+.header {
+    position: sticky;
+    top: 0;
+    background-color: var(--color-white);
+    border-bottom: 1px solid var(--color-border);
+    padding: 1.5rem var(--gutter);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.nav-left,
+.nav-right {
+    display: flex;
+    gap: 2rem;
+    font-size: 0.875rem;
+    letter-spacing: 0.1em;
+}
+
+.nav-left a,
+.nav-right a {
+    position: relative;
+}
+
+.nav-left a:hover,
+.nav-right a:hover {
+    opacity: 0.7;
+}
+
+.logo h1 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+}
+
+/* ========================================
+   ヒーローセクション
+   ======================================== */
+
+.hero {
+    position: relative;
+    height: 70vh;
+    min-height: 500px;
+    background: linear-gradient(135deg, var(--color-dark-brown) 0%, #2c2020 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-white);
+    overflow: hidden;
+}
+
+.hero-slide {
+    text-align: center;
+    padding: 2rem;
+}
+
+.hero-content h2 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    letter-spacing: 0.15em;
+}
+
+.hero-content p {
+    font-size: 1.125rem;
+    margin-bottom: 2rem;
+    letter-spacing: 0.1em;
+}
+
+.btn-primary {
+    display: inline-block;
+    background-color: var(--color-white);
+    color: var(--color-black);
+    padding: 1rem 2.5rem;
+    font-size: 0.875rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    border-radius: var(--border-radius);
+    transition: var(--transition);
+}
+
+.btn-primary:hover {
+    background-color: var(--color-black);
+    color: var(--color-white);
+}
+
+/* ========================================
+   カテゴリーセクション
+   ======================================== */
+
+.categories {
+    padding: var(--section-spacing) 0;
+}
+
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.category-item {
+    text-align: center;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.category-item:hover {
+    transform: translateY(-5px);
+}
+
+.category-image {
+    aspect-ratio: 3/4;
+    background-color: var(--color-gray-light);
+    margin-bottom: 1rem;
+    overflow: hidden;
+}
+
+.category-item h3 {
+    font-size: 1.125rem;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+}
+
+.placeholder-image {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #e0e0e0 0%, #f5f5f5 100%);
+    color: #999;
+    font-size: 1rem;
+    font-family: var(--font-serif);
+    letter-spacing: 0.1em;
+}
+
+/* ========================================
+   商品セクション
+   ======================================== */
+
+.products {
+    padding: var(--section-spacing) 0;
+}
+
+.products.sale-section {
+    background-color: var(--color-gray-light);
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2.5rem;
+}
+
+.section-header h2 {
+    font-size: 2rem;
+    letter-spacing: 0.2em;
+}
+
+.view-all {
+    font-size: 0.875rem;
+    letter-spacing: 0.05em;
+    text-decoration: underline;
+}
+
+.view-all:hover {
+    opacity: 0.7;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2.5rem;
+}
+
+.product-item {
+    background-color: var(--color-white);
+    transition: var(--transition);
+}
+
+.product-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.product-image {
+    position: relative;
+    aspect-ratio: 3/4;
+    background-color: var(--color-gray-light);
+    margin-bottom: 1rem;
+    overflow: hidden;
+}
+
+.badge {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    padding: 0.375rem 0.75rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    background-color: var(--color-black);
+    color: var(--color-white);
+}
+
+.badge.new {
+    background-color: var(--color-black);
+}
+
+.badge.sale {
+    background-color: var(--color-sale);
+}
+
+.product-info {
+    padding: 0 0.5rem 1rem;
+}
+
+.product-info h3 {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.product-price {
+    font-size: 1.125rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.original-price {
+    text-decoration: line-through;
+    color: #999;
+    font-size: 0.875rem;
+    margin-right: 0.5rem;
+}
+
+.sale-price {
+    color: var(--color-sale);
+}
+
+.btn-add-cart {
+    width: 100%;
+    background-color: var(--color-black);
+    color: var(--color-white);
+    padding: 0.875rem;
+    font-size: 0.875rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    border-radius: var(--border-radius);
+}
+
+.btn-add-cart:hover {
+    background-color: var(--color-dark-brown);
+}
+
+/* ========================================
+   フッター
+   ======================================== */
+
+.footer {
+    background-color: var(--color-dark-brown);
+    color: var(--color-white);
+    padding: 3rem 0 1.5rem;
+    margin-top: var(--section-spacing);
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2.5rem;
+    margin-bottom: 2.5rem;
+}
+
+.footer-section h4 {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    letter-spacing: 0.15em;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin-bottom: 0.75rem;
+}
+
+.footer-section a:hover {
+    opacity: 0.7;
+}
+
+.social-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.newsletter p {
+    font-size: 0.875rem;
+    margin-bottom: 1rem;
+    opacity: 0.9;
+}
+
+.newsletter-form {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.newsletter-form input {
+    flex: 1;
+    padding: 0.75rem;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--color-white);
+    font-size: 0.875rem;
+}
+
+.newsletter-form input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.newsletter-form button {
+    padding: 0.75rem 1.5rem;
+    background-color: var(--color-white);
+    color: var(--color-black);
+    font-weight: 700;
+    font-size: 0.875rem;
+    letter-spacing: 0.05em;
+}
+
+.newsletter-form button:hover {
+    background-color: var(--color-gray-light);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    font-size: 0.875rem;
+    opacity: 0.7;
+}
+
+/* ========================================
+   レスポンシブデザイン
+   ======================================== */
+
+@media (max-width: 1000px) {
+    .hero-content h2 {
+        font-size: 2.5rem;
+    }
+
+    .product-grid {
+        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 700px) {
+    .header {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .nav-left,
+    .nav-right {
+        gap: 1rem;
+        font-size: 0.75rem;
+    }
+
+    .logo h1 {
+        font-size: 1.25rem;
+    }
+
+    .hero {
+        height: 50vh;
+        min-height: 400px;
+    }
+
+    .hero-content h2 {
+        font-size: 2rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
+
+    .category-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+
+    .section-header h2 {
+        font-size: 1.5rem;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+}

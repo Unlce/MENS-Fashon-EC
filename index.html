@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MENS FASHION - メンズファッション</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- アナウンスメントバー -->
+    <div class="announcement-bar">
+        <p>15,000円以上のご購入で送料無料</p>
+    </div>
+
+    <!-- ヘッダー -->
+    <header class="header">
+        <nav class="nav-left">
+            <a href="#new">NEW ARRIVAL</a>
+            <a href="#collection">COLLECTION</a>
+            <a href="#sale">SALE</a>
+        </nav>
+
+        <div class="logo">
+            <h1>MENS FASHION</h1>
+        </div>
+
+        <nav class="nav-right">
+            <a href="#about">ABOUT</a>
+            <a href="#search">🔍</a>
+            <a href="#cart">🛒</a>
+        </nav>
+    </header>
+
+    <!-- メインビジュアル -->
+    <section class="hero">
+        <div class="hero-slide active">
+            <div class="hero-content">
+                <h2>2025 SPRING COLLECTION</h2>
+                <p>新しい季節に向けた上質なスタイルを</p>
+                <a href="#collection" class="btn-primary">コレクションを見る</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- カテゴリー -->
+    <section class="categories">
+        <div class="container">
+            <div class="category-grid">
+                <div class="category-item">
+                    <div class="category-image">
+                        <div class="placeholder-image">JACKETS</div>
+                    </div>
+                    <h3>ジャケット</h3>
+                </div>
+                <div class="category-item">
+                    <div class="category-image">
+                        <div class="placeholder-image">SHIRTS</div>
+                    </div>
+                    <h3>シャツ</h3>
+                </div>
+                <div class="category-item">
+                    <div class="category-image">
+                        <div class="placeholder-image">PANTS</div>
+                    </div>
+                    <h3>パンツ</h3>
+                </div>
+                <div class="category-item">
+                    <div class="category-image">
+                        <div class="placeholder-image">ACCESSORIES</div>
+                    </div>
+                    <h3>アクセサリー</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 新着商品 -->
+    <section class="products" id="new">
+        <div class="container">
+            <div class="section-header">
+                <h2>NEW ARRIVAL</h2>
+                <a href="#all" class="view-all">すべて見る →</a>
+            </div>
+
+            <div class="product-grid">
+                <div class="product-item">
+                    <div class="product-image">
+                        <div class="placeholder-image">Product 1</div>
+                        <span class="badge new">NEW</span>
+                    </div>
+                    <div class="product-info">
+                        <h3>テーラードジャケット</h3>
+                        <p class="product-price">¥29,800</p>
+                        <button class="btn-add-cart">カートに追加</button>
+                    </div>
+                </div>
+
+                <div class="product-item">
+                    <div class="product-image">
+                        <div class="placeholder-image">Product 2</div>
+                        <span class="badge new">NEW</span>
+                    </div>
+                    <div class="product-info">
+                        <h3>オックスフォードシャツ</h3>
+                        <p class="product-price">¥12,800</p>
+                        <button class="btn-add-cart">カートに追加</button>
+                    </div>
+                </div>
+
+                <div class="product-item">
+                    <div class="product-image">
+                        <div class="placeholder-image">Product 3</div>
+                    </div>
+                    <div class="product-info">
+                        <h3>スリムフィットパンツ</h3>
+                        <p class="product-price">¥15,800</p>
+                        <button class="btn-add-cart">カートに追加</button>
+                    </div>
+                </div>
+
+                <div class="product-item">
+                    <div class="product-image">
+                        <div class="placeholder-image">Product 4</div>
+                        <span class="badge sale">SALE</span>
+                    </div>
+                    <div class="product-info">
+                        <h3>レザーシューズ</h3>
+                        <p class="product-price">
+                            <span class="original-price">¥24,800</span>
+                            <span class="sale-price">¥19,800</span>
+                        </p>
+                        <button class="btn-add-cart">カートに追加</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- セール商品 -->
+    <section class="products sale-section" id="sale">
+        <div class="container">
+            <div class="section-header">
+                <h2>SALE</h2>
+                <a href="#all-sale" class="view-all">すべて見る →</a>
+            </div>
+
+            <div class="product-grid">
+                <div class="product-item">
+                    <div class="product-image">
+                        <div class="placeholder-image">Sale 1</div>
+                        <span class="badge sale">30% OFF</span>
+                    </div>
+                    <div class="product-info">
+                        <h3>ウールコート</h3>
+                        <p class="product-price">
+                            <span class="original-price">¥45,800</span>
+                            <span class="sale-price">¥32,060</span>
+                        </p>
+                        <button class="btn-add-cart">カートに追加</button>
+                    </div>
+                </div>
+
+                <div class="product-item">
+                    <div class="product-image">
+                        <div class="placeholder-image">Sale 2</div>
+                        <span class="badge sale">20% OFF</span>
+                    </div>
+                    <div class="product-info">
+                        <h3>ニットセーター</h3>
+                        <p class="product-price">
+                            <span class="original-price">¥18,800</span>
+                            <span class="sale-price">¥15,040</span>
+                        </p>
+                        <button class="btn-add-cart">カートに追加</button>
+                    </div>
+                </div>
+
+                <div class="product-item">
+                    <div class="product-image">
+                        <div class="placeholder-image">Sale 3</div>
+                        <span class="badge sale">25% OFF</span>
+                    </div>
+                    <div class="product-info">
+                        <h3>デニムパンツ</h3>
+                        <p class="product-price">
+                            <span class="original-price">¥16,800</span>
+                            <span class="sale-price">¥12,600</span>
+                        </p>
+                        <button class="btn-add-cart">カートに追加</button>
+                    </div>
+                </div>
+
+                <div class="product-item">
+                    <div class="product-image">
+                        <div class="placeholder-image">Sale 4</div>
+                        <span class="badge sale">15% OFF</span>
+                    </div>
+                    <div class="product-info">
+                        <h3>レザーベルト</h3>
+                        <p class="product-price">
+                            <span class="original-price">¥8,800</span>
+                            <span class="sale-price">¥7,480</span>
+                        </p>
+                        <button class="btn-add-cart">カートに追加</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- フッター -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>カスタマーサービス</h4>
+                    <ul>
+                        <li><a href="#contact">お問い合わせ</a></li>
+                        <li><a href="#shipping">配送について</a></li>
+                        <li><a href="#returns">返品・交換</a></li>
+                        <li><a href="#faq">よくある質問</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>会社情報</h4>
+                    <ul>
+                        <li><a href="#about">会社概要</a></li>
+                        <li><a href="#stores">店舗情報</a></li>
+                        <li><a href="#recruit">採用情報</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>フォローする</h4>
+                    <div class="social-links">
+                        <a href="#instagram">Instagram</a>
+                        <a href="#twitter">Twitter</a>
+                        <a href="#facebook">Facebook</a>
+                    </div>
+                </div>
+
+                <div class="footer-section newsletter">
+                    <h4>メールマガジン</h4>
+                    <p>最新情報やお得な情報をお届けします</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="メールアドレス">
+                        <button type="submit">登録</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 MENS FASHION. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
